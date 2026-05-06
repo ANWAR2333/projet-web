@@ -235,7 +235,6 @@ nav{
 
 .slide{
     width: 100%;
-    height: ;
     flex-shrink: 0;
     object-fit: cover;
     position: absolute;
