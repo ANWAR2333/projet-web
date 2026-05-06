@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail du Maroc</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Background animé avec particules de zelij -->
+    <div class="zelij-background" id="zelij-bg"></div>
+    
+    <div class="hero">
+        <nav>
+            <div class="nav_links">
+                <a href="#" id="link1">Destinations</a>
+                <a href="#" id="link2">Culture</a>
+            </div>
+            <div class="nav_logo">
+                <img src="images/logo.png">
+            </div>
+            <div class="nav_links">
+                <a href="#" id="link3">Gastronomie</a>
+                <a href="#" id="link4">Activités</a>
+            </div>
+        </nav>
+        <h1>Découvrez le Maroc</h1>
+        <p>Explorez les merveilles du Maroc, de ses paysages à sa culture riche.</p>
+    </div>
+    <div class="frise"></div>
+    <main>
+        
+        
+        <div class="destinations">
+            <div class="hero-line">
+                <span class="hero-line-icon">✦</span>
+            </div>
+            <h4>À DÉCOUVRIR</h4>
+            <h2>Destinations incontournables</h2>
+            <p>Découvrez les joyaux du Maroc, des villes impériales aux paysages désertiques.</p>
+
+            <!-- City Cards -->
+            <!--Tanger-->
+            <div id="cards">
+                <div class="city-card" role="article">
+                    <div class="city-bg bg-tanger"></div>
+                    <div class="city-overlay"></div>
+                    <div class="city-bottom">
+                        <div class="city-name-sm">Tanger</div>
+                    </div>
+                    <div class="dc-body">
+                        <div class="ov-name">Tanger</div>
+                        <div class="ov-divider"></div>
+                        <div class="ov-facts">
+                            <div class="ov-fact">Mariée du Nord</div>
+                            <div class="ov-fact">Porte entre l'Europe et l'Afrique</div>
+                            <div class="ov-fact">Casbah & Médina historiques</div>
+                        </div>
+                        <div class="ov-tags">
+                            <div class="ov-tag">Cap Spartel</div>
+                            <div class="ov-tag">Médina</div>
+                            <div class="ov-tag">Casbah</div>
+                            <div class="ov-tag">Grotte d´Hercule</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Fes-->
+                <div class="city-card" role="article">
+                    <div class="city-bg bg-fes"></div>
+                    <div class="city-bottom">
+                        <div class="city-name-sm">Fes</div>
+                    </div>
+                    <div class="dc-body">
+                        <div class="ov-name">Fes</div>
+                        <div class="ov-divider"></div>
+                        <div class="ov-facts">
+                            <div class="ov-fact">Capitale scientifique</div>
+                            <div class="ov-fact">Médina historique</div>
+                            <div class="ov-fact">Université Al-Qarawiyyin</div>
+                        </div>
+                        <div class="ov-tags">
+                            <div class="ov-tag">Tanneries Chouara</div>
+                            <div class="ov-tag">Medersa Bou Inania</div>
+                            <div class="ov-tag">Médina UNESCO</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Rabat-->
+                <div class="city-card" role="article">
+                    <div class="city-bg bg-rabat"></div>
+                    <div class="city-bottom">
+                        <div class="city-name-sm">Rabat</div>
+                    </div>
+                    <div class="dc-body">
+                        <div class="ov-name">Rabat</div>
+                        <div class="ov-divider"></div>
+                        <div class="ov-facts">
+                            <div class="ov-fact">Capitale politique</div>
+                            <div class="ov-fact">Centre administratif</div>
+                            <div class="ov-fact">Site UNESCO</div>
+                        </div>
+                        <div class="ov-tags">
+                            <div class="ov-tag">Palais Royal</div>
+                            <div class="ov-tag">Kasbah</div>
+                            <div class="ov-tag">Médina</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Casablanca-->
+                <div class="city-card" role="article">
+                    <div class="city-bg bg-casa"></div>
+                    <div class="city-bottom">
+                        <div class="city-name-sm">Casablanca</div>
+                    </div>
+                    <div class="dc-body">
+                        <div class="ov-name">Casablanca</div>
+                        <div class="ov-divider"></div>
+                        <div class="ov-facts">
+                            <div class="ov-fact">Capitale économique</div>
+                            <div class="ov-fact">Côte atlantique</div>
+                            <div class="ov-fact">Port commercial</div>
+                        </div>
+                        <div class="ov-tags">
+                            <div class="ov-tag">Corniche</div>
+                            <div class="ov-tag">Anfa</div>
+                            <div class="ov-tag">Hassan II</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Marrakech-->
+                <div class="city-card" role="article">
+                    <div class="city-bg bg-marrakech"></div>
+                    <div class="city-bottom">
+                        <div class="city-name-sm">Marrakech</div>
+                    </div>
+                    <div class="dc-body">
+                        <div class="ov-name">Marrakech</div>
+                        <div class="ov-divider"></div>
+                        <div class="ov-facts">
+                            <div class="ov-fact">La ville rouge</div>
+                            <div class="ov-fact">Capitale des Almoravids</div>
+                            <div class="ov-fact">Médina historique</div>
+                        </div>
+                        <div class="ov-tags">
+                            <div class="ov-tag">Médina UNESCO</div>
+                            <div class="ov-tag">Jemaa el-Fnaa</div>
+                            <div class="ov-tag">Bahia Palace</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Agadir-->
+                <div class="city-card" role="article">
+                    <div class="city-bg bg-agadir"></div>
+                    <div class="city-bottom">
+                        <div class="city-name-sm">Agadir</div>
+                    </div>
+                    <div class="dc-body">
+                        <div class="ov-name">Agadir</div>
+                        <div class="ov-divider"></div>
+                        <div class="ov-facts">
+                            <div class="ov-fact">1ère Station balnéaire</div>
+                            <div class="ov-fact">Côte atlantique</div>
+                            <div class="ov-fact">Tourisme de masse</div>
+                        </div>
+                        <div class="ov-tags">
+                            <div class="ov-tag">Kasbah d´Agadir Oufella</div>
+                            <div class="ov-tag">Souk el Had</div>
+                            <div class="ov-tag">Taghazout</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Navigation destinations : flèches + points + compteur -->
+            <div class="dest-nav">
+                <!-- Flèche gauche -->
+                <button class="dest-arrow-btn" id="destPrev" aria-label="Destination précédente">←</button>
+
+                <!-- Points indicateurs -->
+                <div class="dest-dots" id="destDots">
+                  <div class="dest-dot active" data-idx="0"></div>
+                  <div class="dest-dot" data-idx="1"></div>
+                  <div class="dest-dot" data-idx="2"></div>
+                  <div class="dest-dot" data-idx="3"></div>
+                  <div class="dest-dot" data-idx="4"></div>
+                  <div class="dest-dot" data-idx="5"></div>
+                </div>
+
+                <!-- Compteur -->
+                <div class="dest-counter" id="destCounter">01 / 06</div>
+            
+                <!-- Flèche droite -->
+                <button class="dest-arrow-btn" id="destNext" aria-label="Destination suivante">→</button>
+            </div>
+        </div>
+
+        <!-- Séparateur après destinations -->
+        <div class="frise"></div>
+
+        
+        <div class="cult">
+            <div class="hero-line">
+                <span class="hero-line-icon">✦</span>
+            </div>
+            <h4>Héritage Millénaire</h4>
+            <h2>Culture et Patrimoine</h2>
+            <p>Plongez dans la richesse culturelle du Maroc, de ses médinas animées à ses traditions séculaires.</p>
+
+            <div class="view_all">
+                <a href="activity.html">Voir Tout</a>
+            </div>
+
+            <div class="container">
+                <div class="card">
+                    <div class="card_logo"></div>
+                    <div class="card_info"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card_logo"></div>
+                    <div class="card_info"></div>
+                </div>
+
+                <div class="card">
+                    <div class="card_logo"></div>
+                    <div class="card_info"></div>
+                </div>
+
+            </div>
+            <div class="hero-line">
+                <span class="hero-line-icon">✦</span>
+            </div>
+        </div>
+
+        <!-- Séparateur après culture -->
+        <div class="frise"></div>
+        
+        <div class="gast">
+            <div class="hero-line">
+                <span class="hero-line-icon">✦</span>
+            </div>
+            <h4>Saveurs Ancestrales</h4>
+            <h2>Gastronomie et Cuisine</h2>
+            <p>Découvrez les délices culinaires du Maroc, façonnés par des recettes transmises de génération en génération.</p>
+
+            <div class="recipes">
+                <div class="view_all">
+                    <a href="activity.html">Voir Tout</a>
+                </div>
+
+                <div class="recipe">
+                    <div class="recipe_img"></div>
+                    <div class="recipe_info"></div>
+                </div>
+
+                <div class="recipe">
+                    <div class="recipe_img"></div>
+                    <div class="recipe_info"></div>
+                </div>
+
+                <div class="recipe">
+                    <div class="recipe_img"></div>
+                    <div class="recipe_info"></div>
+                </div>
+        
+                <div class="hero-line">
+                    <span class="hero-line-icon">✦</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Séparateur après gastronomie -->
+        <div class="frise"></div>
+
+        
+        <div class="activity">
+            <div class="hero-line">
+                <span class="hero-line-icon">✦</span>
+            </div>
+            <h4>À VIVRE</h4>
+            <h2>Expériences Uniques</h2>
+            <p>Plongez dans l'authenticité du Maroc à travers des expériences inoubliables, de la découverte de paysages à la visite de villages traditionnels.</p>
+            <div class="view_all">
+                <a href="activity.html">Voir Tout</a>
+            </div>
+            <div class="card-showcase">
+                <div class="activity_card">
+                    <div class="activity_img">
+                        <img src="merzouga.png">
+                    </div>
+                    <div class="activity_info">
+                        <h3>Bivouac dans l´Erg Chebbi (Merzouga)</h3>
+                        <p>Découvrez l'atmosphère magique du désert marocain lors d'un bivouac inoubliable.</p>
+                        <a href="">Découvrir</a>
+                    </div>
+                </div>
+
+                <div class="activity_card">
+                    <div class="activity_img">
+                        <img src="fes2.png">
+                    </div>
+                    <div class="activity_info">
+                        <h3>Médina de Fes</h3>
+                        <p>Découvrez la richesse culturelle et historique de la ville médiévale de Fes.</p>
+                        <a href="">Découvrir</a>
+                    </div>
+                </div>
+
+                <div class="activity_card">
+                    <div class="activity_img">
+                        <img src="ouarzazate.png">
+                    </div>
+                    <div class="activity_info">
+                        <h3>Routes des Kasbahs (Ouarzazate)</h3>
+                        <p>Découvrez la beauté du désert et les paysages spectaculaires de la région d'Ouarzazate.</p>
+                        <a href="">Découvrir</a>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="hero-line">
+                <span class="hero-line-icon">✦</span>
+            </div>
+        </div>
+
+        <!-- Séparateur final -->
+        <div class="frise"></div>
+
+    </main>
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,625 @@
+body{
+    font-family: poppins, sans-serif;
+    margin : 0;
+    box-sizing: border-box;
+    background-color: var(--BG);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ════════════════════
+   VARIABLES CSS
+════════════════════ */
+:root {
+    --R: #c8102e;    /* Rouge marocain */
+    --OR: #ffc72c;   /* Orange doré */
+    --V: #006233;    /* Vert marocain */
+    --BG: #1a1a1a;   /* Fond sombre */
+    --R2: #8b0000;   /* Rouge foncé */
+    --OR2: #daa520;  /* Or foncé */
+    --T: 'Poppins', sans-serif;
+    --A: 'Arial', sans-serif;
+}
+
+/* ════════════════════════════════════════════
+       FRISE DÉCORATIVE — BANDE TRICOLORE ANIMÉE
+════════════════════════════════════════════ */
+.frise {
+    height: 8px;
+    background: linear-gradient(90deg,
+      var(--R)  0%,
+      var(--R)  50%,
+      var(--V)  50%,
+      var(--V)  100%
+    );
+    background-size: 200% 100%;
+    animation: frise-anim 4s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.frise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+      rgba(255,255,255,0.1) 0%,
+      rgba(255,255,255,0.3) 50%,
+      rgba(255,255,255,0.1) 100%
+    );
+    animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes frise-anim {
+  /* La bande tricolore se déplace horizontalement */
+  from { background-position: 0% 0%; }
+  to   { background-position: 100% 0%; }
+}
+
+@keyframes shine {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.4; }
+}
+
+
+/* ════════════════════
+   ZELIJ ANIMATED BACKGROUND
+════════════════════ */
+.zelij-background {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.zelij-particle {
+    position: absolute;
+    opacity: 0.3;
+    transform-origin: center;
+    animation: float 20s infinite linear;
+}
+
+.zelij-particle::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: rotate 8s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(50px);
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Formes géométriques de zelij */
+.zelij-star {
+    width: 30px;
+    height: 30px;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    background: linear-gradient(135deg, #d4a574, #8b6f47);
+}
+
+.zelij-star-small {
+    width: 20px;
+    height: 20px;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    background: linear-gradient(45deg, #c9a961, #a0844d);
+}
+
+.zelij-hexagon {
+    width: 40px;
+    height: 40px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(120deg, #e8b4a0, #b89968);
+}
+
+.zelij-diamond {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(45deg, #d9a574, #9d7e5d);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.zelij-square {
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(135deg, #c99a60, #8b6f47);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+}
+
+header{
+    position: absolute;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background:none;
+    position: relative;
+    z-index: 2;
+}
+
+.nav_links a{
+    position: relative;
+    padding-bottom: 1rem;
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav_links a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg , red,green);
+    transition: all 0.5s ease;
+}
+
+.nav_links a:hover::after{
+    width: 100%;
+}
+
+
+.nav_logo img{
+    width: 150px;
+    margin: auto;
+}
+
+.hero{
+    top: 0;
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    color: #ffc72c;
+    display: grid;
+    height: 80vh;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1{
+    font-size: 48px;
+    margin: auto;
+}
+
+.hero p{
+    font-size: 24px;
+    margin: 20px 0;
+    margin: auto;
+    font-weight: bold;
+    color: #ffc72c;
+}
+
+.btn{
+    padding: 10px 20px;
+    background: linear-gradient(90deg , red,green);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: auto;
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+.btn:hover{
+    background: #000;
+    transform: scale(1.1);
+    margin: auto;
+}
+
+.star{
+    margin: auto;
+    font-size: 24px;
+    color: gold;
+}
+
+header{
+    margin: 20px auto;
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero-line {
+    display:flex; align-items:center; justify-content:center; gap:1rem;
+    padding: 1.5rem;
+}
+.hero-line::before,.hero-line::after {
+  content:''; flex:1; max-width:80px; height:1px;
+  background: linear-gradient(90deg, transparent, var(--OR));
+}
+.hero-line::after {
+    background: linear-gradient(90deg, var(--OR), transparent);
+}
+.hero-line-icon {
+    color:var(--OR);
+    font-family:var(--A);
+    font-size:1.2rem;
+}
+
+.destinations {
+    padding: 0 auto;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    background: local rgba(0,0,0,0.7);
+}
+
+.destinations h4 , h2 {
+    color: var(--OR);
+}
+
+.destinations p {
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin:  auto;
+}
+
+#cards{
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.city-card {
+    width: 300px;
+    height: 290px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Background image  gradient palette per city */
+.city-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+.bg-rabat{
+    background-image: url('images/rabat.jpg');
+    
+}
+.bg-casa{
+    background-image: url('images/casa.png');
+    
+}
+.bg-tanger    {
+    background-image: url('images/tanger.png');
+    
+}
+.bg-marrakech { 
+    background-image: url('images/marrakech.png');
+    
+}
+.bg-agadir    { 
+    background-image: url('images/agadir.png');
+    
+}
+.bg-fes       { 
+    background-image: url('images/fes.jpg');
+    
+}
+
+/* Overlay des cartes */
+/* OVERLAY on hover */
+
+
+.dc-body {
+    opacity: 0;
+    position:absolute; 
+    bottom:0; 
+    left:0; 
+    right:0;
+    padding: 2rem 1.8rem;
+    z-index:4;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.95) 20%,
+        rgba(0,0,0,0.6) 50%,
+        rgba(0,0,0,0.1) 80%,
+        transparent 100%
+    );
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.city-card:hover .dc-body {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.97) 0%,
+      rgba(0,0,0,0.7) 45%,
+      rgba(0,0,0,0.3) 70%,
+      rgba(0,0,0,0.05) 100%
+    );
+}
+
+.city-card:hover .city-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.ov-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: .3rem;
+}
+
+.ov-divider {
+    width: 24px;
+    height: 1.5px;
+    background: #C49A3C;
+    border-radius: 1px;
+    margin-bottom: .9rem;
+    flex-shrink: 0;
+}
+
+.ov-facts {
+   display: flex;
+   flex-direction: column;
+   gap: .35rem;
+   margin-bottom: 1rem;
+}
+.ov-fact {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: .72rem;
+    color: rgba(255,255,255,.75);
+    font-weight: 300;
+    line-height: 1.35;
+}
+.ov-fact::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #C49A3C;
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+.ov-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.ov-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: .58rem;
+    font-weight: 500;
+    color: rgba(255,255,255,.7);
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: .04em;
+}
+
+/* ── NAVIGATION DES DESTINATIONS ── */
+/* Barre de navigation avec points et info en bas */
+.dest-nav {
+    position:relative; z-index:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:2rem;
+    padding: 3rem;
+}
+/* Flèches de navigation */
+.dest-arrow-btn {
+    width:44px; height:44px;
+    border-radius:50%;
+    border:1px solid rgba(201,149,58,0.3);
+    background:rgba(201,149,58,0.1);
+    color:var(--OR);
+    font-size:1.2rem;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: all 0.3s;
+}
+
+.dest-arrow-btn:hover {
+    background:var(--OR);
+    color:var(--BG);
+    transform: scale(1.1);
+}
+
+/* Points indicateurs */
+.dest-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dest-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(201,149,58,0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dest-dot.active {
+    background: var(--OR);
+    transform: scale(1.2);
+}
+
+.dest-dot:hover {
+    background: var(--OR2);
+}
+
+/* Compteur */
+.dest-counter {
+    font-size: 0.9rem;
+    color: var(--OR);
+    font-weight: 500;
+    margin: 0 1rem;
+}
+
+
+.cult{
+    background-color: #8b0000;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cult .container{
+    display : grid;
+    gap : 1rem;
+}
+
+.gast{
+    text-align: center;
+    margin: auto;
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.activity{
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+    margin:auto;
+    position: relative;
+    z-index: 1;
+    padding: 3rem;
+}
+
+.activity h4 , .activity h2 {
+    color: var(--OR);
+}
+.activity p {
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin:  auto;
+}
+
+.activity .card-showcase{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.activity_card{
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    border: 0.5px solid rgba(201,149,58,0.2);
+    transition: all 0.3s ease;
+}
+
+.activity_info{
+    height: 100%;
+    color: rgba(255,255,255,1);
+    padding: 1rem;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.activity_card:hover{
+    transform: scale(1.05);
+    border-color: rgba(201,149,58,0.5);
+    box-shadow: 0 4px 12px rgba(201,149,58,0.3);
+}
+
+.activity_card:hover .activity_info{
+    color: var(--OR);
+    margin-bottom: 0.5rem;
+}
+.activity_img img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.activity_card a{
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--OR);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.view_all{
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.view_all a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--OR);
+    color: var(--BG);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
